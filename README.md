@@ -18,6 +18,28 @@ calculated by tracking the RMS energy over the course of a piece. Sections of a 
 Installation
 ------------
 
+Download [libsndfile source](http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.25.tar.gz) from http://www.mega-nerd.com/.
+
+    tar -zxvf libsndfile-1.0.25.tar.gz
+    cd libsndfile-1.0.25
+    ./configure
+
+(I had to edit programs/sndfile-play.c to remove carbon.h -> /*      #include <Carbon.h>*/ )
+
+    make
+    sudo make install
+
+then
+
+    git clone git@github.com:bbc/clever-thumbnailer.git
+    cd clever-thumbnailer
+    ./configure
+    make
+
+(you can also make install or just run ./src/clever-thumbnailer)
+
+    ffmpeg -i face_to_face.mp3 face_to_face.wav
+    ./src/clever-thumbnailer face_to_face.wav
 
 
 Usage
