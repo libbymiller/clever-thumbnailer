@@ -18,6 +18,29 @@ calculated by tracking the RMS energy over the course of a piece. Sections of a 
 Installation
 ------------
 
+**Ubuntu**
+
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install build-essential libtool autotools-dev automake pkg-config bsdmainutils curl git libsndfile-dev libatlas-base-dev libblas-dev libsndfile-dev
+
+    git clone git@github.com:bbc/clever-thumbnailer.git
+    cd clever-thumbnailer
+
+edit configure.ac
+remove -Werror from the line 
+WARNING_CFLAGS="-Wall -Werror -pedantic -Wunused"
+
+    ./autogen.sh
+    ./configure
+    make
+
+(you can also make install or just run ./src/clever-thumbnailer)
+
+    ./src/clever-thumbnailer face_to_face.wav
+
+**Mac OS X**
+
 Download [libsndfile source](http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.25.tar.gz) from http://www.mega-nerd.com/.
 
     tar -zxvf libsndfile-1.0.25.tar.gz
@@ -34,7 +57,6 @@ then
     git clone git@github.com:bbc/clever-thumbnailer.git
     cd clever-thumbnailer
     ./autogen.sh 
-    ./configure
     make
 
 (you can also make install or just run ./src/clever-thumbnailer)
