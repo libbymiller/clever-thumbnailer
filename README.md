@@ -33,6 +33,7 @@ then
 
     git clone git@github.com:bbc/clever-thumbnailer.git
     cd clever-thumbnailer
+    ./autogen.sh 
     ./configure
     make
 
